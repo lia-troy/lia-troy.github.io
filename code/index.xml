@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codes on Applied in Theory</title>
-    <link>lia-troy.github.io/code/</link>
+    <link>www.appliedintheory.com/code/</link>
     <description>Recent content in Codes on Applied in Theory</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jun 2022 09:46:12 +0300</lastBuildDate><atom:link href="lia-troy.github.io/code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 09:46:12 +0300</lastBuildDate><atom:link href="www.appliedintheory.com/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Logistic map code</title>
-      <link>lia-troy.github.io/code/logistic-map/</link>
+      <link>www.appliedintheory.com/code/logistic-map/</link>
       <pubDate>Fri, 03 Jun 2022 09:46:12 +0300</pubDate>
       
-      <guid>lia-troy.github.io/code/logistic-map/</guid>
+      <guid>www.appliedintheory.com/code/logistic-map/</guid>
       <description>I use the logistic map with various r values to show different dynamics.
 Note that in this example I set r = 3.95.
 For those who want to check my work (or experiment themselves), the data in the following figure was generated with this code, and I used matplotlib.pyplot.scatter to generate the figure.

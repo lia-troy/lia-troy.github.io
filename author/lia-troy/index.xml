@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lia Troy on Applied in Theory</title>
-    <link>lia-troy.github.io/author/lia-troy/</link>
+    <link>www.appliedintheory.com/author/lia-troy/</link>
     <description>Recent content in Lia Troy on Applied in Theory</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jun 2022 09:46:12 +0300</lastBuildDate><atom:link href="lia-troy.github.io/author/lia-troy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 09:46:12 +0300</lastBuildDate><atom:link href="www.appliedintheory.com/author/lia-troy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Logistic map code</title>
-      <link>lia-troy.github.io/code/logistic-map/</link>
+      <link>www.appliedintheory.com/code/logistic-map/</link>
       <pubDate>Fri, 03 Jun 2022 09:46:12 +0300</pubDate>
       
-      <guid>lia-troy.github.io/code/logistic-map/</guid>
+      <guid>www.appliedintheory.com/code/logistic-map/</guid>
       <description>I use the logistic map with various r values to show different dynamics.
 Note that in this example I set r = 3.95.
 For those who want to check my work (or experiment themselves), the data in the following figure was generated with this code, and I used matplotlib.pyplot.scatter to generate the figure.
@@ -20,12 +20,12 @@ If you do change the r value, I suggest also playing with the t value, to see th
     
     <item>
       <title>Chaos 101: a small change in input is a BIG change in output</title>
-      <link>lia-troy.github.io/article/chaos101/</link>
+      <link>www.appliedintheory.com/article/chaos101/</link>
       <pubDate>Thu, 02 Jun 2022 08:46:10 +0300</pubDate>
       
-      <guid>lia-troy.github.io/article/chaos101/</guid>
+      <guid>www.appliedintheory.com/article/chaos101/</guid>
       <description>&lt;p&gt;Many systems are chaotic.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;lia-troy.github.io/dynamics/chaos-icon.jpg&#34; alt=&#34;Photo by Timur Kozmenko on Unsplash&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;www.appliedintheory.com/dynamics/chaos-icon.jpg&#34; alt=&#34;Photo by Timur Kozmenko on Unsplash&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Some are only interesting to physics classes, like the double pendulum.
 Some, like the three-body problem, are concrete physics problems that feel a bit more important.
 However, the weather is also a highly chaotic system,
@@ -34,10 +34,10 @@ and the fact that weather prediction is so complex has an immediate effect on al
     
     <item>
       <title>About me</title>
-      <link>lia-troy.github.io/page/about/</link>
+      <link>www.appliedintheory.com/page/about/</link>
       <pubDate>Tue, 31 May 2022 10:03:22 +0300</pubDate>
       
-      <guid>lia-troy.github.io/page/about/</guid>
+      <guid>www.appliedintheory.com/page/about/</guid>
       <description>Hi, I’m Lia, a mathematician converting to software engineering. I graduated with a Bachelor’s in Mathematics from the University of Chicago in 2020. I’m currently living the Start-Up Nation dream in Israel, working at NextSilicon on embedded algorithms for compilers.
 I moved to Jerusalem from Montreal, Canada at the age of 12. Even though I was able to pick up conversational Hebrew, classes were a struggle. Math and science became my natural comfort zone.</description>
     </item>
