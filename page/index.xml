@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Applied in Theory</title>
+    <link>lia-troy.github.io/page/</link>
+    <description>Recent content in Pages on Applied in Theory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 31 May 2022 10:03:22 +0300</lastBuildDate><atom:link href="lia-troy.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>lia-troy.github.io/page/about/</link>
+      <pubDate>Tue, 31 May 2022 10:03:22 +0300</pubDate>
+      
+      <guid>lia-troy.github.io/page/about/</guid>
+      <description>Hi, I’m Lia, a mathematician converting to software engineering. I graduated with a Bachelor’s in Mathematics from the University of Chicago in 2020. I’m currently living the Start-Up Nation dream in Israel, working at NextSilicon on embedded algorithms for compilers.
+I moved to Jerusalem from Montreal, Canada at the age of 12. Even though I was able to pick up conversational Hebrew, classes were a struggle. Math and science became my natural comfort zone.</description>
+    </item>
+    
+  </channel>
+</rss>

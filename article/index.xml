@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Applied in Theory</title>
+    <link>lia-troy.github.io/article/</link>
+    <description>Recent content in Articles on Applied in Theory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 02 Jun 2022 08:46:10 +0300</lastBuildDate><atom:link href="lia-troy.github.io/article/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chaos 101: a small change in input is a BIG change in output</title>
+      <link>lia-troy.github.io/article/chaos101/</link>
+      <pubDate>Thu, 02 Jun 2022 08:46:10 +0300</pubDate>
+      
+      <guid>lia-troy.github.io/article/chaos101/</guid>
+      <description>&lt;p&gt;Many systems are chaotic.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;lia-troy.github.io/dynamics/chaos-icon.jpg&#34; alt=&#34;Photo by Timur Kozmenko on Unsplash&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Some are only interesting to physics classes, like the double pendulum.
+Some, like the three-body problem, are concrete physics problems that feel a bit more important.
+However, the weather is also a highly chaotic system,
+and the fact that weather prediction is so complex has an immediate effect on all of our daily lives.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
