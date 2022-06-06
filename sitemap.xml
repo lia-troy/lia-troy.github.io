@@ -1,1 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>lia-troy.github.io/</loc><lastmod>2022-06-03T09:46:12+03:00</lastmod></url><url><loc>lia-troy.github.io/author/</loc><lastmod>2022-06-03T09:46:12+03:00</lastmod></url><url><loc>lia-troy.github.io/code/</loc><lastmod>2022-06-03T09:46:12+03:00</lastmod></url><url><loc>lia-troy.github.io/author/lia-troy/</loc><lastmod>2022-06-03T09:46:12+03:00</lastmod></url><url><loc>lia-troy.github.io/code/logistic-map/</loc><lastmod>2022-06-03T09:46:12+03:00</lastmod></url><url><loc>lia-troy.github.io/article/</loc><lastmod>2022-06-02T08:46:10+03:00</lastmod></url><url><loc>lia-troy.github.io/article/chaos101/</loc><lastmod>2022-06-02T08:46:10+03:00</lastmod></url><url><loc>lia-troy.github.io/page/about/</loc><lastmod>2022-05-31T10:03:22+03:00</lastmod></url><url><loc>lia-troy.github.io/page/</loc><lastmod>2022-05-31T10:03:22+03:00</lastmod></url><url><loc>lia-troy.github.io/categories/</loc></url><url><loc>lia-troy.github.io/series/</loc></url><url><loc>lia-troy.github.io/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>lia-troy.github.io/</loc>
+    <lastmod>2022-06-03T09:46:12+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/author/</loc>
+    <lastmod>2022-06-03T09:46:12+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/code/</loc>
+    <lastmod>2022-06-03T09:46:12+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/author/lia-troy/</loc>
+    <lastmod>2022-06-03T09:46:12+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/code/logistic-map/</loc>
+    <lastmod>2022-06-03T09:46:12+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/article/</loc>
+    <lastmod>2022-06-02T08:46:10+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/article/chaos101/</loc>
+    <lastmod>2022-06-02T08:46:10+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/page/about/</loc>
+    <lastmod>2022-05-31T10:03:22+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/page/</loc>
+    <lastmod>2022-05-31T10:03:22+03:00</lastmod>
+  </url><url>
+    <loc>lia-troy.github.io/categories/</loc>
+  </url><url>
+    <loc>lia-troy.github.io/series/</loc>
+  </url><url>
+    <loc>lia-troy.github.io/tags/</loc>
+  </url>
+</urlset>
