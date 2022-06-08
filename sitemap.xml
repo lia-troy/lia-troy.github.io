@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://www.appliedintheory.com/</loc>
     <lastmod>2022-06-03T09:46:12+03:00</lastmod>
   </url><url>
-    <loc>/author/</loc>
+    <loc>https://www.appliedintheory.com/author/</loc>
     <lastmod>2022-06-03T09:46:12+03:00</lastmod>
   </url><url>
-    <loc>/code/</loc>
+    <loc>https://www.appliedintheory.com/code/</loc>
     <lastmod>2022-06-03T09:46:12+03:00</lastmod>
   </url><url>
-    <loc>/author/lia-troy/</loc>
+    <loc>https://www.appliedintheory.com/author/lia-troy/</loc>
     <lastmod>2022-06-03T09:46:12+03:00</lastmod>
   </url><url>
-    <loc>/code/logistic-map/</loc>
+    <loc>https://www.appliedintheory.com/code/logistic-map/</loc>
     <lastmod>2022-06-03T09:46:12+03:00</lastmod>
   </url><url>
-    <loc>/article/</loc>
+    <loc>https://www.appliedintheory.com/article/</loc>
     <lastmod>2022-06-02T08:46:10+03:00</lastmod>
   </url><url>
-    <loc>/article/chaos101/</loc>
+    <loc>https://www.appliedintheory.com/article/chaos101/</loc>
     <lastmod>2022-06-02T08:46:10+03:00</lastmod>
   </url><url>
-    <loc>/page/about/</loc>
+    <loc>https://www.appliedintheory.com/page/about/</loc>
     <lastmod>2022-05-31T10:03:22+03:00</lastmod>
   </url><url>
-    <loc>/page/</loc>
+    <loc>https://www.appliedintheory.com/page/</loc>
     <lastmod>2022-05-31T10:03:22+03:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://www.appliedintheory.com/categories/</loc>
   </url><url>
-    <loc>/series/</loc>
+    <loc>https://www.appliedintheory.com/series/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://www.appliedintheory.com/tags/</loc>
   </url>
 </urlset>
