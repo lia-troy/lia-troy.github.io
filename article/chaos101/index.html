@@ -170,7 +170,7 @@ and then use some easy examples to build an intuition for what chaos is and what
 <h2 id="when-close-enough-isnt-good-enough">When close enough ISN&rsquo;T good enough</h2>
 <p>Let&rsquo;s start with an easy example: $f(x) = \frac{1} {x}$, and an error of $10^{-6}$.</p>
 <p>If I choose $x = 0.00001$, then $\frac{1} {0.00001} = 100,000$. So far so good.</p>
-<p>But &ndash; what if I add $\varepsilon = 10^{-9}$ to the input? Unfortunately, then $\frac{1} {0.00001 + \varepsilon} = 100,010.001$.
+<p>But what if I add $\varepsilon = 10^{-9}$ to the input? Unfortunately, then $\frac{1} {0.00001 + \varepsilon} = 100,010.001$.
 Yikes. My output changed by 10.
 It was just the tiniest difference in input, but it left my error tolerance in the dust.</p>
 <p>On the one hand, yeah, don&rsquo;t divide by zero (or really close to zero).
