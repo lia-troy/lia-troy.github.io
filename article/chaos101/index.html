@@ -11,7 +11,7 @@
     <meta name="author" content="Lia Troy">
     <meta name="description" content="Math theory that actually affects your life, written for engineers">
     <meta name="keywords" content="blog,math,applied,engineers,engineering,code,theory">
-    <meta name="generator" content="Hugo 0.100.2" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <title>
         
            
@@ -170,7 +170,7 @@ and then use some easy examples to build an intuition for what chaos is and what
 <h2 id="when-close-enough-isnt-good-enough">When close enough ISN&rsquo;T good enough</h2>
 <p>Let&rsquo;s start with an easy example: $f(x) = \frac{1} {x}$, and an error of $10^{-6}$.</p>
 <p>If I choose $x = 0.00001$, then $\frac{1} {0.00001} = 100,000$. So far so good.</p>
-<p>But what if I add $\varepsilon = 10^{-9}$ to the input? Unfortunately, then $\frac{1} {0.00001 + \varepsilon} = 100,010.001$.
+<p>But what if I add $\varepsilon = 10^{-9}$ to the input? Unfortunately, then $\frac{1} {0.00001 + \varepsilon} \approx 99,990$.
 Yikes. My output changed by 10.
 It was just the tiniest difference in input, but it left my error tolerance in the dust.</p>
 <p>On the one hand, yeah, don&rsquo;t divide by zero (or really close to zero).
@@ -223,7 +223,7 @@ Even though I plotted the points with low opacity of 0.2,
 we see solid blue and yellow dots since the individual dots are so closely packed on top of each other.</p>
 <p>For the first few iterations, we see what we expect to see.
 The dots start out close together, and are mapped around together, staying closely packed.</p>
-<p>A $t = 5$ we start to see for the first time that the sets are slightly more spread out than they were previously,
+<p>At $t = 5$ we start to see for the first time that the sets are slightly more spread out than they were previously,
 and from $t \gt 5$ the dots start to spread out significantly.</p>
 <p>At $t = 10$ we see the first iteration that satisfies the definition of <em>mixing</em> &ndash;
 all disjoint open sets are eventually mapped to an overlap.</p>
@@ -350,17 +350,6 @@ I will include an engineer-friendly post, but there&rsquo;s also some pretty gre
 
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ2QEV7BRW"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-JQ2QEV7BRW', { 'anonymize_ip': false });
-}
-</script>
-
 
     
     
