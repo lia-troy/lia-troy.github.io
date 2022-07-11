@@ -5,7 +5,23 @@
     <link>https://www.appliedintheory.com/author/lia-troy/</link>
     <description>Recent content in Lia Troy on Applied in Theory</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Jun 2022 11:09:07 +0300</lastBuildDate><atom:link href="https://www.appliedintheory.com/author/lia-troy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 07:42:35 +0300</lastBuildDate><atom:link href="https://www.appliedintheory.com/author/lia-troy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is convergence?</title>
+      <link>https://www.appliedintheory.com/article/convergence/</link>
+      <pubDate>Mon, 04 Jul 2022 07:42:35 +0300</pubDate>
+      
+      <guid>https://www.appliedintheory.com/article/convergence/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://www.appliedintheory.com/article/easy-stability/&#34; title=&#34;Post: Easy signs of stability&#34;&gt;previous post on stability&lt;/a&gt;,
+we saw a few familiar properties that indicate stability in the system.
+However, what we really mean when we are looking for stability is a system that is robust to small rounding errors.
+In other words, we want convergence.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.appliedintheory.com/dynamics/convergence-icon.jpg&#34; alt=&#34;Photo by Lance Grandahl on Unsplash&#34;&gt;&lt;/p&gt;
+&lt;p&gt;By exploring fixed points,
+we will be able to properly define what this means,
+and build an intuition for what convergence looks like.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Easy indications of a stable system</title>
       <link>https://www.appliedintheory.com/article/easy-stability/</link>

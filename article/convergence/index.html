@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://www.appliedintheory.com">
+    <meta name="author" content="Lia Troy">
+    <meta name="description" content="Math theory that actually affects your life, written for engineers">
+    <meta name="keywords" content="blog,math,applied,engineers,engineering,code,theory">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <title>
+        
+           
+               What is convergence? &vert; Applied in Theory
+           
+        
+    </title>
+    <meta itemprop="name" content="What is convergence?">
+    <meta itemprop="description" content="What is convergence? - Math theory that actually affects your life, written for engineers">
+    <meta property="og:title" content="What is convergence?">
+    <meta property="og:description" content="What is convergence? - Math theory that actually affects your life, written for engineers">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://www.appliedintheory.com/article/convergence/">
+    <meta property="og:site_name" content="Applied in Theory">
+    <meta property="og:type" content="article">
+
+    
+
+
+    <script src="/modernizr-simple.js"></script>
+
+    
+    <link href="/article/convergence/" rel="alternate" type="application/rss+xml" title="Applied in Theory" />
+    <link href="/article/convergence/" rel="feed" type="application/rss+xml" title="Applied in Theory" />
+    
+
+    
+    <link rel="canonical" href="https://www.appliedintheory.com/article/convergence/">
+    
+
+    <link rel="stylesheet" href="https://www.appliedintheory.com/theme.css">
+
+    
+
+    
+        
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="https://www.appliedintheory.com/page/about/">About me</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/page/about/" class="logo">
+                
+                    <img src="/profile-img.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa false"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Applied in Theory
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">Can higher math be brought down to Earth?</span>
+            
+        </div>
+
+        
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://www.appliedintheory.com/article/convergence/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://www.appliedintheory.com/article/convergence/">
+            What is convergence?
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-07-04</span>
+            
+        
+
+        
+            
+                <span class="readingTime">8 min read</span>
+            
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href=" /page/about/ ">Lia Troy</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>In the <a href="https://www.appliedintheory.com/article/easy-stability/" title="Post: Easy signs of stability">previous post on stability</a>,
+we saw a few familiar properties that indicate stability in the system.
+However, what we really mean when we are looking for stability is a system that is robust to small rounding errors.
+In other words, we want convergence.</p>
+<p><img src="/dynamics/convergence-icon.jpg" alt="Photo by Lance Grandahl on Unsplash"></p>
+<p>By exploring fixed points,
+we will be able to properly define what this means,
+and build an intuition for what convergence looks like.</p>
+<h2 id="before-we-start">Before we start</h2>
+<p>In the <a href="https://www.appliedintheory.com/article/chaos101/" title="Post: Chaos 101">post on chaos</a>,
+we covered the definition of a dynamic system.
+For our purposes, a dynamic system is that it is a function that iterates repeatedly,
+with the output becoming the input for the next timestep.</p>
+<p>Just to make our lives easier, let&rsquo;s use the notation $f \circ f(x)$ to mean $f(f(x))$.</p>
+<h2 id="fixed-points">Fixed points</h2>
+<p>Fixed points are really simple: they are inputs that are unchanged by the function.
+For example, $0$ is a fixed point of $x^2$ since $0^2 = 0$.
+Here&rsquo;s another few examples:</p>
+<ol>
+<li>$1$ is a fixed point of $\frac {1} {x}$.</li>
+<li>In $y = x$, every point is a fixed point.</li>
+<li>In the logistic map $3.95 \cdot p \cdot (1 - p)$, 0 is a fixed point.</li>
+<li>100% is the fixed point of charging your phone.</li>
+<li>$0 is the fixed point of earning interest.</li>
+</ol>
+<p>The formal definition of a fixed point is:<br>
+<em>If $f(x) = x$, then $x$ is a fixed point for the function $f$.</em></p>
+<p>The five examples listed above actually exhibit different types of fixed point dynamics.
+As we learn about the different types, we will use these examples to show the differences.</p>
+<h4 id="red-herring-attracting-fixed-points">Red herring: Attracting fixed points</h4>
+<p><img src="/dynamics/attracting-pt-img.jpg" alt="Photo by @Ear-candy on freeimages"></p>
+<p>This type of dynamic has a very simple definition:
+not only does an attracting fixed point $x$ map to itself,
+but at least one other point is mapped to $x$ as well.
+More formally, we have $f(x) = x$,
+and in addition, there exists some other point $y$ such that $f(y) = x$.</p>
+<p>So far, attracting fixed points look pretty promising to help us define convergence.
+Not only do they stay fixed, but other inputs can end up at this result as well (hence attracting).
+Intuitively, this sounds like convergence, with multiple inputs leading to the same output.</p>
+<p>Let&rsquo;s see how it plays out in our examples, and whether this is a good enough definition of convergence:</p>
+<ol>
+<li>$\ f = \frac {1} {x}$:
+This is not an attracting fixed point.
+1 is the only input such that $\quad f(1) = \frac {1} {1} = 1$.</li>
+<li>$\ f(x) = x$: Every point is a fixed point, but none of them are attracting.</li>
+<li>$\ f(p) = 3.95 \cdot p \cdot (1 - p)$: 0 is an attracting fixed point, since $f(1) = f(0) = 0$.</li>
+<li>Phone charging: 100% is an attracting fixed point.
+Charging from 99% gives 100%.</li>
+<li>Earning interest: $0 is not attracting.
+You can&rsquo;t earn interest from some money and end up with no money.</li>
+</ol>
+<p>These examples are just all over the map.</p>
+<p>Some systems, like earning interest, really feel pretty stable, but aren&rsquo;t attracting.
+The logistic map in example 3 is completely wacky.
+It has an attracting fixed point,
+but in the chaos 101 post, we saw that it is actually chaotic almost everywhere else.</p>
+<p>The confusion is that attracting fixed points are stable for points that converge to them,
+but aren&rsquo;t sufficient for stability of the rest of the system.</p>
+<p>We need something stronger&hellip;</p>
+<h2 id="convergence-for-engineering">Convergence for engineering</h2>
+<p><img src="/dynamics/conv-arrows-img.jpeg" alt="Photo from pngegg.com"></p>
+<p>There&rsquo;s a bunch of different mathematical definitions of convergence.
+A lot of them depend on how quickly the system converges,
+or differentiate between converging to a point and just getting really close.</p>
+<p>From an engineering perspective, there are only three bounds that matter:</p>
+<ul>
+<li>$N$: our &ldquo;sufficiently large&rdquo; number.
+We often choose an upper bound for how large we care to check.
+This upper bound can be an order of magnitude, or maximum number of iterations that make sense in our system.</li>
+<li>$\varepsilon$: This is our margin of error.
+This is basically asking how wrong is actually still ok in our system.</li>
+<li>Expected input: in engineering, the behaviour of the system in general does not matter.
+The only thing that matters is the behaviour on <em>expected</em> input.</li>
+</ul>
+<p>Armed with $N$, $\varepsilon$, and our inputs, we can define <strong>convergence for engineers</strong>:<br>
+A system is stable on the expected input if two points that are within $\varepsilon$ of each other stay within
+$\varepsilon$ of each other after $N$ iterations.
+These two points must be from the expected set of inputs.</p>
+<p>Formally:
+<em>Let $U$ be our set of inputs.
+$f$ converges for engineers if for $x, y \in U$ and $|x - y| \lt \varepsilon$,
+we have $|f \circ f \circ \dots \circ f(x) - f \circ f \circ \dots \circ f(y)| \lt \varepsilon$.</em><br>
+Recall that $f \circ f(x) = f(f(x))$.</p>
+<p>Let&rsquo;s look at our five systems, and which ones converge from an engineering perspective:</p>
+<ol>
+<li>$f = \frac {1} {x}$:
+For $x \lt 1$, the system does not converge.
+But&hellip; for $x \gt 1$, the system definitely converges.
+Given enough iterations, all points approach 0,
+which definitely means the outputs get closer to each other over time.</li>
+<li>$f(x) = x$: Definitely converges.
+Two points that start off close together stay close together because &hellip; well &hellip; they just don&rsquo;t move.</li>
+<li>$f(p) = 3.95 \cdot p \cdot (1 - p)$: Here it really matters what the possible inputs are.
+If we know for a fact that we only put 0 or 1 as an input, then sure, it converges.
+But, if we are choosing input from around 0.3, as we know, the system is chaotic.</li>
+<li>Phone charging: Converges!
+Eventually all points end up at 100% anyway, and points stay close together over time.</li>
+<li>Earning interest: Here is where we REALLY care about $N$.
+Normally, the same input doesn&rsquo;t earn interest for millions of iterations.
+Moreover, there are usually upper bounds on the inputs.
+Even though earning interest is exponential, if you know you won&rsquo;t have more than a couple thousand iterations,
+you can easily check which inputs have acceptable error margins.
+The same small rounding error matters less if the input was 3 than if it was 3 billion.</li>
+</ol>
+<h2 id="fixed-points-useful-after-all">Fixed points: Useful after all</h2>
+<p>Let&rsquo;s take a look at gradient descent, which follows the slope downwards to find the local minimum.
+Let&rsquo;s see how gradient descent behaves on $x^4−x^2$.</p>
+<p><img src="/dynamics/plot_two_minima.png" alt="Plot of x^4 - x^2"></p>
+<p>If you start with $x \gt 0$, no matter what, through gradient descent you will end up at the fixed point $x = \frac{1} {\sqrt{2}}$.
+Similarly, gradient descent from $x \lt 0$ will always result in $x = - \frac{1} {\sqrt{2}}$.</p>
+<p>But what about $x = 0$? The derivative here is 0, so there isn&rsquo;t a natural &ldquo;descent&rdquo; in one particular direction.
+Basically, this point is the boundary between two regions that converge to different points.
+Near zero, the system is highly sensitive to the input conditions: slightly above or below 0 give totally different answers.</p>
+<h4 id="what-can-we-learn-here-from-fixed-points">What can we learn here from fixed points?</h4>
+<p>Let&rsquo;s look at our three points with derivative 0.</p>
+<p>Two of them are the local minima we are looking for.
+In terms of the dynamics, the two minima are attracting fixed points,
+and also points that the system converges to.
+Since the system converges almost everywhere to one of two points,
+allowing a pretty large error would result in the same answer in most cases.</p>
+<p>The maximum at $x = 0$ is not a convergence point.
+It isn&rsquo;t even an attracting fixed point;
+unless we start at $x = 0$ we will never accidentally end up there.</p>
+<p>However, it is the boundary between two regions that converge to different points.
+There is a small neighbourhood around $x = 0$ where a change in the tiniest $\varepsilon$ could
+flip the input from negative to positive.
+All of a sudden, the “inconsequential” error margin completely changed the output.
+This is crucial information.</p>
+<p>We&rsquo;ve seen this behaviour before: in $\frac {1} {x}$,
+the fixed point 1 is the boundary between the convergent and non-convergent regions.
+The fixed point of $0 in earning interest is the difference between earning money and sinking into debt.
+In the logistic map if the input is less than 0,
+then the output doesn&rsquo;t end up inside [0, 1], instead it flip flops between positive and negative, and approaches infinity.</p>
+<p>Even when fixed points are not convergence points,
+they can give us excellent hints about the behaviour of the system,
+and more importantly, boundaries between different system behaviour.</p>
+<h2 id="bottom-line">Bottom line</h2>
+<p>From an engineering perspective, the behaviour of the system only matters on the expected input.
+Moreover, if the system stays within an appropriate error rate for a reasonable number of iterations,
+it really does not matter at all if the system is completely chaotic in other conditions.</p>
+<p>Testing all possible expected inputs is usually not possible.
+Luckily, fixed points are often significant to the system&rsquo;s behaviour,
+and can give us a lot of insight into the dynamics.
+We may discover that a particular fixed point is a convergence point or a boundary between different system behaviours.</p>
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>In the last few posts, we&rsquo;ve covered behaviours of systems in a general sense,
+and seen some small examples that exhibit these behaviours.</p>
+<p>The next step is to ask about more complex applications,
+and how to test them for local dynamics and chaos.
+This is particularly important for HPC applications.</p>
+<p>I&rsquo;ll also cover common sources of error due to floating point representation.</p>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/convergence/">What is convergence?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/easy-stability/">Easy indications of a stable system</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/code/logistic-map/">Logistic map code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/chaos101/">Chaos 101: a small change in input is a BIG change in output</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+
+        <div class="right">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                2022
+                
+                by Lia Troy
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+</script>
+
+    
+
+
+    <script src="https://www.appliedintheory.com/theme.js"></script>
+
+    
+    
+    
+
+    
+</body>
+
+</html>
