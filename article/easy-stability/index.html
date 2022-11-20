@@ -11,7 +11,7 @@
     <meta name="author" content="Lia Troy">
     <meta name="description" content="Math theory that actually affects your life, written for engineers">
     <meta name="keywords" content="blog,math,applied,engineers,engineering,code,theory">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.106.0">
     <title>
         
            
@@ -131,7 +131,7 @@
 
         
             
-                <span class="readingTime">6 min read</span>
+                <span class="readingTime">7 min read</span>
             
         
 
@@ -150,13 +150,16 @@
     
         
 
-        <p>Luckily, some systems can be easily identified as stable.
-In these cases we can easily find hints that indicate that we can sleep easily at night knowing
+        <p>Some systems can be easily identified as stable, and not chaotic.
+In these special cases we can easily find hints that indicate that we can sleep easily at night knowing
 that our system is well behaved.</p>
 <p><img src="/dynamics/rubiks-easy-stability.jpg" alt="Image by Olav Ahrens Rotne on Unsplash"></p>
 <p>For our purposes, <em>stable</em> simply means that rounding errors do not change the output drastically.</p>
 <p>We&rsquo;re going to look at a few types of stable dynamics that are very good indications that
 what we expect is actually happening.</p>
+<p>A system is a function, along with a defined set of inputs.
+This is an important definition, since the same function may exhibit completely different behaviour
+if the input set changes.</p>
 <h2 id="monotone-functions">Monotone functions</h2>
 <p>Exponential functions like $e^x$ don&rsquo;t have minima or maxima over $\mathbb{R}$,
 but that definitely doesn&rsquo;t force them to be chaotically mixing.
@@ -203,20 +206,26 @@ since this cycle repeats indefinitely.
 The simulation has reached stability.</p>
 <h2 id="convex-functions">Convex functions</h2>
 <p>The subject of convexity is an entire university course, but for our purposes we don&rsquo;t have to go that far.
-A system is convex if it has a unique minimum or maximum point.
-The functions $x^2$ and phone charging are convex systems;
+Technically, a system is convex if it has a unique minimum point and no maxima.
+However, we extend the defintion to also include functions that have one maximum point and no minima.
+We can reuse all of the same reasoning, since if $f$ has one unique maximum and no minimum,
+then $-f$ is convex, and we can continue with our analysis.</p>
+<p>The functions $x^2$ and phone charging are convex systems;
 the functions $x^4 - x^2$ and finding the shortest route on Google maps are not
 (there can be two distinct shortest paths).</p>
-<p>The amazing thing about convex systems is that there is always one clear answer.
+<p>The amazing thing about convex systems is that there is always one clear solution.
 As long as you choose an error margin that is appropriate for the problem, you should be good to go.</p>
 <p><img src="/dynamics/sand-dune-peak.jpeg" alt="Image by Alex Krum on Unsplash"></p>
 <p>A lot of algorithms assume that the system they are being used on is convex.
 The easiest example is gradient descent, which by definition only finds local minima.
-If your local minimum isn&rsquo;t guaranteed to also be global, you could be in for a world of hurt.</p>
-<p>As a result of this, most machine learning algorithms also require convexity.
+If your system isn&rsquo;t convex, then you have no guarantee that your local minimum
+is also the global minimum, and you could be in for a world of hurt.</p>
+<p>Most machine learning algorithms also require convexity.
 ML can achieve incredible results, but behind the scenes they often rely on gradient descent.
 In particular, neural nets are nearly always trained using gradient descent.
-Unfortunately, depending on the data, it can be difficulty to test for convexity.</p>
+Unfortunately, depending on the data, it can be difficulty to test for convexity.
+Collecting good data is incredibly difficult, and it is possible that the training data does not
+contain the true global minimum.</p>
 <h2 id="linear-systems">Linear systems</h2>
 <p>If you are lucky enough to be working on a problem that is reducible to a linear calculation,
 you get to rely on incredibly powerful theorems and pre-cooked libraries based on those theorems.</p>

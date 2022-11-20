@@ -11,7 +11,7 @@
     <meta name="author" content="Lia Troy">
     <meta name="description" content="Math theory that actually affects your life, written for engineers">
     <meta name="keywords" content="blog,math,applied,engineers,engineering,code,theory">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.106.0">
     <title>
         
            
@@ -131,7 +131,7 @@
 
         
             
-                <span class="readingTime">8 min read</span>
+                <span class="readingTime">7 min read</span>
             
         
 
@@ -169,7 +169,6 @@ with the output becoming the input for the next timestep.</p>
 For example, $0$ is a fixed point of $x^2$ since $0^2 = 0$.
 Here&rsquo;s another few examples:</p>
 <ol>
-<li>$1$ is a fixed point of $\frac {1} {x}$.</li>
 <li>In $y = x$, every point is a fixed point.</li>
 <li>In the logistic map $3.95 \cdot p \cdot (1 - p)$, 0 is a fixed point.</li>
 <li>100% is the fixed point of charging your phone.</li>
@@ -177,7 +176,7 @@ Here&rsquo;s another few examples:</p>
 </ol>
 <p>The formal definition of a fixed point is:<br>
 <em>If $f(x) = x$, then $x$ is a fixed point for the function $f$.</em></p>
-<p>The five examples listed above actually exhibit different types of fixed point dynamics.
+<p>The four examples listed above actually exhibit different types of fixed point dynamics.
 As we learn about the different types, we will use these examples to show the differences.</p>
 <h4 id="red-herring-attracting-fixed-points">Red herring: Attracting fixed points</h4>
 <p><img src="/dynamics/attracting-pt-img.jpg" alt="Photo by @Ear-candy on freeimages"></p>
@@ -191,9 +190,6 @@ Not only do they stay fixed, but other inputs can end up at this result as well 
 Intuitively, this sounds like convergence, with multiple inputs leading to the same output.</p>
 <p>Let&rsquo;s see how it plays out in our examples, and whether this is a good enough definition of convergence:</p>
 <ol>
-<li>$\ f = \frac {1} {x}$:
-This is not an attracting fixed point.
-1 is the only input such that $\quad f(1) = \frac {1} {1} = 1$.</li>
 <li>$\ f(x) = x$: Every point is a fixed point, but none of them are attracting.</li>
 <li>$\ f(p) = 3.95 \cdot p \cdot (1 - p)$: 0 is an attracting fixed point, since $f(1) = f(0) = 0$.</li>
 <li>Phone charging: 100% is an attracting fixed point.
@@ -203,7 +199,7 @@ You can&rsquo;t earn interest from some money and end up with no money.</li>
 </ol>
 <p>These examples are just all over the map.</p>
 <p>Some systems, like earning interest, really feel pretty stable, but aren&rsquo;t attracting.
-The logistic map in example 3 is completely wacky.
+The logistic map in example 2 is completely wacky.
 It has an attracting fixed point,
 but in the chaos 101 post, we saw that it is actually chaotic almost everywhere else.</p>
 <p>The confusion is that attracting fixed points are stable for points that converge to them,
@@ -233,13 +229,8 @@ These two points must be from the expected set of inputs.</p>
 $f$ converges for engineers if for $x, y \in U$ and $|x - y| \lt \varepsilon$,
 we have $|f \circ f \circ \dots \circ f(x) - f \circ f \circ \dots \circ f(y)| \lt \varepsilon$.</em><br>
 Recall that $f \circ f(x) = f(f(x))$.</p>
-<p>Let&rsquo;s look at our five systems, and which ones converge from an engineering perspective:</p>
+<p>Let&rsquo;s look at our four systems, and which ones converge from an engineering perspective:</p>
 <ol>
-<li>$f = \frac {1} {x}$:
-For $x \lt 1$, the system does not converge.
-But&hellip; for $x \gt 1$, the system definitely converges.
-Given enough iterations, all points approach 0,
-which definitely means the outputs get closer to each other over time.</li>
 <li>$f(x) = x$: Definitely converges.
 Two points that start off close together stay close together because &hellip; well &hellip; they just don&rsquo;t move.</li>
 <li>$f(p) = 3.95 \cdot p \cdot (1 - p)$: Here it really matters what the possible inputs are.
@@ -278,8 +269,7 @@ There is a small neighbourhood around $x = 0$ where a change in the tiniest $\va
 flip the input from negative to positive.
 All of a sudden, the “inconsequential” error margin completely changed the output.
 This is crucial information.</p>
-<p>We&rsquo;ve seen this behaviour before: in $\frac {1} {x}$,
-the fixed point 1 is the boundary between the convergent and non-convergent regions.
+<p>We&rsquo;ve seen this behaviour before.
 The fixed point of $0 in earning interest is the difference between earning money and sinking into debt.
 In the logistic map if the input is less than 0,
 then the output doesn&rsquo;t end up inside [0, 1], instead it flip flops between positive and negative, and approaches infinity.</p>
