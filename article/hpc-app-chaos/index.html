@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://www.appliedintheory.com">
+    <meta name="author" content="Lia Troy">
+    <meta name="description" content="Math theory that actually affects your life, written for engineers">
+    <meta name="keywords" content="blog,math,applied,engineers,engineering,code,theory">
+    <meta name="generator" content="Hugo 0.106.0">
+    <title>
+        
+           
+               Chaos in HPC apps &vert; Applied in Theory
+           
+        
+    </title>
+    <meta itemprop="name" content="Chaos in HPC apps">
+    <meta itemprop="description" content="Chaos in HPC apps - Math theory that actually affects your life, written for engineers">
+    <meta property="og:title" content="Chaos in HPC apps">
+    <meta property="og:description" content="Chaos in HPC apps - Math theory that actually affects your life, written for engineers">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://www.appliedintheory.com/article/hpc-app-chaos/">
+    <meta property="og:site_name" content="Applied in Theory">
+    <meta property="og:type" content="article">
+
+    
+
+
+    <script src="/modernizr-simple.js"></script>
+
+    
+    <link href="/article/hpc-app-chaos/" rel="alternate" type="application/rss+xml" title="Applied in Theory" />
+    <link href="/article/hpc-app-chaos/" rel="feed" type="application/rss+xml" title="Applied in Theory" />
+    
+
+    
+    <link rel="canonical" href="https://www.appliedintheory.com/article/hpc-app-chaos/">
+    
+
+    <link rel="stylesheet" href="https://www.appliedintheory.com/theme.css">
+
+    
+
+    
+        
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="https://www.appliedintheory.com/page/about/">About me</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/page/about/" class="logo">
+                
+                    <img src="/profile-img.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa false"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Applied in Theory
+                </a>
+            </h3>
+
+            
+        </div>
+
+        
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://www.appliedintheory.com/article/hpc-app-chaos/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://www.appliedintheory.com/article/hpc-app-chaos/">
+            Chaos in HPC apps
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-11-13</span>
+            
+        
+
+        
+            
+                <span class="readingTime">7 min read</span>
+            
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href=" /page/about/ ">Lia Troy</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>I originally studied chaos in the context of pure mathematical thought experiments like the Cantor set.
+I had no clue that the extremely abstract material from my dynamics class would repeatedly inform the way I write code.</p>
+<p>I first experienced applied chaos theory while writing an app that maps light past rotating black holes.</p>
+<p><img src="/dynamics/black-hole.jpeg" alt="Photo by Jeremy Perkins on Unsplash"></p>
+<p>As I&rsquo;ve seen more HPC applications, I&rsquo;ve realized that understanding the app&rsquo;s runtime dynamics is critical to performance, and should determine the app&rsquo;s design.</p>
+<h2 id="links-to-related-posts">Links to related posts</h2>
+<p>I&rsquo;ve described chaos and stability in previous posts:</p>
+<ol>
+<li><a href="https://www.appliedintheory.com/article/chaos101/" title="Post: Chaos 101">Chaos 101</a></li>
+<li><a href="https://www.appliedintheory.com/article/easy-stability/" title="Post: Easy signs of stability">Easy signs of stability</a></li>
+<li><a href="https://www.appliedintheory.com/article/convergence/" title="Post: What is convergence?">What is convergence?</a></li>
+</ol>
+<h2 id="parallelizing-chaotic-black-hole-lensing">Parallelizing chaotic black hole lensing</h2>
+<p>One summer, I applied to an <a href="https://www.appliedintheory.com/" title="Northeast Cyberteam">NSF funded initiative</a> that matches computer science students with scientists.
+I was paired with a special relativity professor who was writing an HPC application.
+My job was to create a software framework to parallelize Professor Kling ODEs.
+The material of my dynamical systems class showed up front and center in the code design.
+I was shocked.</p>
+<p>The path that each light ray takes through a space is called a <em>geodesic</em>.
+We normally think of light in Euclidean space, shining in a straight line from the source.
+However, when light passes through a lens, it changes direction.
+It follows the geodesic.</p>
+<p>If a mass generates an enormous gravitational force, space bends around it, creating a lens.
+When light shines past the mass, its geodesic curves.
+In our case, Professor Kling had developed ODEs that described how the geodesics curved around a rotating black hole.</p>
+<p>My role was to create a framework that could run many rays of light through Professor Kling&rsquo;s ODEs as fast as possible.
+The idea was to take a bunch of light rays that started off behind the black hole, and calculate where each ray ended up after passing near the black hole.</p>
+<p>Depending on how close the ray is to the black hole as it passes by, the geodesic takes a completely different path.
+If the light ray passes very far away from the black hole, it follows a nearly straight line and is pretty unaffected by the gravitational force.
+If the light ray is very close to the black hole, it is simply absorbed.</p>
+<p>There is a boundary in between, where the ray is close enough to be affected by the black hole, but not so close as to fall in &ndash; the chaotic region of the system.
+These light rays fall into orbit around the black hole, repeatedly wrap around, then either fall in and get absorbed, or exit the orbit and continue into space.
+Because the black hole rotates, its mass bends space-time asymmetrically around the axis of rotation, and the ODEs are non-linear.</p>
+<p>From a dynamics perspective, the system is fascinating because there are both chaotic and non-chaotic regions of the system.
+In addition, it&rsquo;s intuitive which rays are behaving chaotically &ndash; the ones repeatedly orbiting around the black hole.</p>
+<h2 id="the-math-problem">The math problem</h2>
+<p>We saw in the <a href="https://www.appliedintheory.com/article/chaos101/" title="Post: Chaos 101">post on chaos</a>
+that even the tiniest rounding error (such as floating point representation) is mathematically problematic in a chaotic system.
+When the light rays orbit the black hole dozens of times, the discretized computations become mathematically meaningless.</p>
+<p>Bumping up the precision to 128bit or even 512bit does not resolve this issue. ANY rounding could create a totally different result in these cases. There&rsquo;s no way to bound the error margin.</p>
+<h2 id="the-gpu-branching-problem">The GPU branching problem</h2>
+<p>GPUs were a great choice for parallelization of this HPC app.
+There was one loop that executed the computations, with each step an iteration of the loop.
+GPUs have many cores, batched into sets that all share an instruction set.
+That seemed perfect for our needs &ndash; every iteration was the exact same instruction set.</p>
+<p>At each step, a step size would be chosen and the ODE would be calculated for that distance forward.
+While the ray was progressing in a fairly straight line, the step would be large.
+But, if it was in the middle of an aggressive curve, the step size would be tiny.
+This is a similar process to choosing the step size in gradient descent &ndash; according to the rate of change of the derivative, the curvature at the point.</p>
+<p>Rays that are far away from the black hole have geodesics that are reasonably close to straight lines.
+The same is true of rays that fall straight into the black hole.
+In either case, neighbouring rays would have a similar number of steps.</p>
+<p>In contrast, rays that are in the chaotic region wind around the black hole different numbers of times, meaning the overall length of their geodesics also differ widely.
+In addition, the curvature is aggressive while orbiting the black hole, so the step size gets smaller and smaller, exaggerating the discrepancy in loop iterations per ray.</p>
+<p>Because the GPU cores are batched, they are all required to get new input data for a new ray at the same time.
+If one ray does way more iterations than the rest of its batch, the cores that have completed their rays cannot get new data to crunch until the long ray is done too.
+We could end up with a handful of rays running for hours while the vast majority of the GPU cores sit idle.</p>
+<p><img src="/dynamics/one-seat-used.jpg" alt="Photo by Nicolene Olckers on Unsplash"></p>
+<h2 id="two-birds-one-threshold">Two birds, one threshold</h2>
+<p>Professor Kling brought up the chaotic nature of the ODEs as part of the initial description of the system.
+As a result, the software parallelization framework was specifically designed to be able to handle the different behaviours of the rays.
+Fundamentally, the mathematical chaos and the GPU branching problem are two sides of the same coin, each an expression of the same system behaviour.</p>
+<p>As a ray becomes more and more chaotic, by design, the step size shrinks quickly.
+Both problems &ndash; the math problem and the GPU branching problem &ndash; can be completely sidestepped by simply quitting computations on any ray whose step size shrinks below a predetermined threshold.
+These threads would have orders of magnitude more calculations than their neighbours, and in the end, the computation isn&rsquo;t mathematically viable anyway.</p>
+<p>Not only was the step size threshold trivial to implement in this design, but the definition of &ldquo;neighbouring rays&rdquo; was carefully chosen.
+The rays were run in concentric circles &ndash; neighbouring rays were more likely to have similar behaviour, since they were the same distance from the center of the black hole.
+These choices prevented the GPU branching problem from getting out of hand.</p>
+<p>Running the ODEs with this software with an Nvidia A100 was 38x faster than on a single node in Boston University&rsquo;s cluster, using only the 24 CPU cores.</p>
+<h2 id="bottom-line">Bottom line</h2>
+<p>Going into this project, I had only taken basic courses in classical physics.
+Of my math background, I had expected my analysis courses to be most useful, helping me grasp how the ODEs describe the metric space around the black hole.
+But from a software engineering perspective, the ODEs were a given, I didn&rsquo;t really need to understand them in order to use them in the code.
+In the end, my analysis background wasn&rsquo;t even a fraction as useful as the dynamical systems material.</p>
+<p>Keeping the dynamics in mind guided the app design.
+Neither I nor Professor Kling was familiar with GPUs prior to this project &ndash;
+we would never have anticipated needing this type of threshold for the hardware architecture.
+This is the beauty of mathematics: identifying the underlying cause, instead of putting a bandaid on the symptom.</p>
+<p>This HPC app was a great candidate for GPU parallelization.
+But, if we had been unaware of the dynamics, it&rsquo;s likely that we would have created an app that had terrible runtime on the GPU.
+Even worse, we wouldn&rsquo;t have been able to understand why.</p>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/hpc-app-chaos/">Chaos in HPC apps</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/convergence/">What is convergence?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/easy-stability/">Easy indications of a stable system</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/code/logistic-map/">Logistic map code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.appliedintheory.com/article/chaos101/">Chaos 101: a small change in input is a BIG change in output</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+
+        <div class="right">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                2022
+                
+                by Lia Troy
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+</script>
+
+    
+
+
+    <script src="https://www.appliedintheory.com/theme.js"></script>
+
+    
+    
+    
+
+    
+</body>
+
+</html>
