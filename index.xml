@@ -10,7 +10,7 @@
     
     
     <item>
-      <title>Chaos in HPC apps</title>
+      <title>Chaos in computational simulations</title>
       <link>https://www.appliedintheory.com/article/hpc-app-chaos/</link>
       <pubDate>Sun, 13 Nov 2022 05:11:51 +0200</pubDate>
       
@@ -19,7 +19,7 @@
 I had no clue that the extremely abstract material from my dynamics class would repeatedly inform the way I write code.&lt;/p&gt;
 &lt;p&gt;I first experienced applied chaos theory while writing an app that maps light past rotating black holes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.appliedintheory.com/dynamics/black-hole.jpeg&#34; alt=&#34;Photo by Jeremy Perkins on Unsplash&#34;&gt;&lt;/p&gt;
-&lt;p&gt;As I&amp;rsquo;ve seen more HPC applications, I&amp;rsquo;ve realized that understanding the app&amp;rsquo;s runtime dynamics is critical to performance, and should determine the app&amp;rsquo;s design.&lt;/p&gt;</description>
+&lt;p&gt;As I&amp;rsquo;ve seen more computational simulations in HPC applications, I&amp;rsquo;ve realized that understanding the app&amp;rsquo;s runtime dynamics is critical to performance, and should determine the app&amp;rsquo;s design.&lt;/p&gt;</description>
     </item>
     
     <item>

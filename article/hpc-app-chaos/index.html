@@ -15,14 +15,14 @@
     <title>
         
            
-               Chaos in HPC apps &vert; Applied in Theory
+               Chaos in computational simulations &vert; Applied in Theory
            
         
     </title>
-    <meta itemprop="name" content="Chaos in HPC apps">
-    <meta itemprop="description" content="Chaos in HPC apps - Math theory that actually affects your life, written for engineers">
-    <meta property="og:title" content="Chaos in HPC apps">
-    <meta property="og:description" content="Chaos in HPC apps - Math theory that actually affects your life, written for engineers">
+    <meta itemprop="name" content="Chaos in computational simulations">
+    <meta itemprop="description" content="Chaos in computational simulations - Math theory that actually affects your life, written for engineers">
+    <meta property="og:title" content="Chaos in computational simulations">
+    <meta property="og:description" content="Chaos in computational simulations - Math theory that actually affects your life, written for engineers">
     <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
     <meta property="og:url" content="https://www.appliedintheory.com/article/hpc-app-chaos/">
     <meta property="og:site_name" content="Applied in Theory">
@@ -118,7 +118,7 @@
     <div class="content">
     <h1 class="article-title">
         <a href="https://www.appliedintheory.com/article/hpc-app-chaos/">
-            Chaos in HPC apps
+            Chaos in computational simulations
         </a>
     </h1>
 
@@ -154,7 +154,9 @@
 I had no clue that the extremely abstract material from my dynamics class would repeatedly inform the way I write code.</p>
 <p>I first experienced applied chaos theory while writing an app that maps light past rotating black holes.</p>
 <p><img src="/dynamics/black-hole.jpeg" alt="Photo by Jeremy Perkins on Unsplash"></p>
-<p>As I&rsquo;ve seen more HPC applications, I&rsquo;ve realized that understanding the app&rsquo;s runtime dynamics is critical to performance, and should determine the app&rsquo;s design.</p>
+<p>As I&rsquo;ve seen more computational simulations in HPC applications, I&rsquo;ve realized that understanding the app&rsquo;s runtime dynamics is critical to performance, and should determine the app&rsquo;s design.</p>
+<p>High performance computing (HPC) is the use of supercomputers and computing clusters to run applications that require massive amounts of computing power.
+Often, these applications are scientific simulations.</p>
 <h2 id="links-to-related-posts">Links to related posts</h2>
 <p>I&rsquo;ve described chaos and stability in previous posts:</p>
 <ol>
@@ -164,8 +166,8 @@ I had no clue that the extremely abstract material from my dynamics class would 
 </ol>
 <h2 id="parallelizing-chaotic-black-hole-lensing">Parallelizing chaotic black hole lensing</h2>
 <p>One summer, I applied to an <a href="https://www.appliedintheory.com/" title="Northeast Cyberteam">NSF funded initiative</a> that matches computer science students with scientists.
-I was paired with a special relativity professor who was writing an HPC application.
-My job was to create a software framework to parallelize Professor Kling ODEs.
+I was paired with a special relativity professor who was writing a computational simulation.
+My job was to create a software framework to parallelize Professor Kling&rsquo;s ordinary differential equations (ODEs).
 The material of my dynamical systems class showed up front and center in the code design.
 I was shocked.</p>
 <p>The path that each light ray takes through a space is called a <em>geodesic</em>.
@@ -188,11 +190,11 @@ In addition, it&rsquo;s intuitive which rays are behaving chaotically &ndash; th
 <h2 id="the-math-problem">The math problem</h2>
 <p>We saw in the <a href="https://www.appliedintheory.com/article/chaos101/" title="Post: Chaos 101">post on chaos</a>
 that even the tiniest rounding error (such as floating point representation) is mathematically problematic in a chaotic system.
-When the light rays orbit the black hole dozens of times, the discretized computations become mathematically meaningless.</p>
+When the light rays orbit the black hole dozens of times, the discretized simulation become mathematically meaningless.</p>
 <p>Bumping up the precision to 128bit or even 512bit does not resolve this issue. ANY rounding could create a totally different result in these cases. There&rsquo;s no way to bound the error margin.</p>
 <h2 id="the-gpu-branching-problem">The GPU branching problem</h2>
 <p>GPUs were a great choice for parallelization of this HPC app.
-There was one loop that executed the computations, with each step an iteration of the loop.
+There was one loop that executed the simulation, with each step an iteration of the loop.
 GPUs have many cores, batched into sets that all share an instruction set.
 That seemed perfect for our needs &ndash; every iteration was the exact same instruction set.</p>
 <p>At each step, a step size would be chosen and the ODE would be calculated for that distance forward.
@@ -213,7 +215,7 @@ We could end up with a handful of rays running for hours while the vast majority
 As a result, the software parallelization framework was specifically designed to be able to handle the different behaviours of the rays.
 Fundamentally, the mathematical chaos and the GPU branching problem are two sides of the same coin, each an expression of the same system behaviour.</p>
 <p>As a ray becomes more and more chaotic, by design, the step size shrinks quickly.
-Both problems &ndash; the math problem and the GPU branching problem &ndash; can be completely sidestepped by simply quitting computations on any ray whose step size shrinks below a predetermined threshold.
+Both problems &ndash; the math problem and the GPU branching problem &ndash; can be completely sidestepped by simply quitting the simulation on any ray whose step size shrinks below a predetermined threshold.
 These threads would have orders of magnitude more calculations than their neighbours, and in the end, the computation isn&rsquo;t mathematically viable anyway.</p>
 <p>Not only was the step size threshold trivial to implement in this design, but the definition of &ldquo;neighbouring rays&rdquo; was carefully chosen.
 The rays were run in concentric circles &ndash; neighbouring rays were more likely to have similar behaviour, since they were the same distance from the center of the black hole.
@@ -273,7 +275,7 @@ Even worse, we wouldn&rsquo;t have been able to understand why.</p>
                 
                 
                     <li>
-                        <a href="https://www.appliedintheory.com/article/hpc-app-chaos/">Chaos in HPC apps</a>
+                        <a href="https://www.appliedintheory.com/article/hpc-app-chaos/">Chaos in computational simulations</a>
                     </li>
                 
                     <li>
